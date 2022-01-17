@@ -8,11 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+//import java.io.File;
+//import java.io.FileNotFoundException;
+//import java.io.FileOutputStream;
+//import java.io.IOException;
+//import java.io.ObjectOutputStream;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -581,31 +581,29 @@ contentPane.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyS
     {	private static final long serialVersionUID = 1L;
 		public void actionPerformed( ActionEvent tf )
 	    {
-			File pic=null;
-			try {
-//				System.out.println("make a pic");
-//				BufferedImage pic = vehicle.getPicture();
-//				pic = vehicleJSONbuilder.getPicture();
-			 
-				 System.out.println("Name: "+pic.getName());
-				
-			} catch ( Exception e) {
-				System.err.println( "GUI Picture failed!");
-				System.out.println(e.getLocalizedMessage());
-				e.printStackTrace();
-			}
-			
-			 try {
-				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("test.png"));
-				out.writeObject(pic);
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			 
+//			File pic=null;
+//			try {
+////				System.out.println("make a pic");
+////				BufferedImage pic = vehicle.getPicture();
+////				pic = vehicleJSONbuilder.getPicture();
+//			 
+//				 System.out.println("Name: "+pic.getName());
+//				
+//			} catch ( Exception e) {
+//				System.err.println( "GUI Picture failed!");
+//				System.out.println(e.getLocalizedMessage());
+//				e.printStackTrace();
+//			}
+//			
+//			 try {
+//				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("test.png"));
+//				out.writeObject(pic);
+//			} catch (FileNotFoundException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
 			     
 //			 picture.setIcon((Icon) pic);
 //			 picture.getParent().revalidate();

@@ -1,6 +1,4 @@
 package hardware;
-
-import java.io.File;
 	
 public interface VehicleInterface 
 /**

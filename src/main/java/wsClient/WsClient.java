@@ -31,15 +31,12 @@ public class WsClient {
 	public WsClient(MessageHandler _messageHandler){
 //	
 	try {
-		System.out.println("WsClient: überspringe IP Adress-Suche.");
-//		serverIP = getIP(standardHost);
+		serverIP = getIP(standardHost);
 	} catch (Exception e) {
-		e.getLocalizedMessage();
-//		System.exit(0);
+		System.out.println(e.getLocalizedMessage());
+		System.out.println("Using localhost as Server.");
+		e.printStackTrace();
 	}
-//	serverIP = "10.0.0.5";
-//	serverIP = "localhost";
-	
     uri = URI.create("ws://"+serverIP+":"+port);
     System.out.println("WSclient started...");
 
@@ -63,8 +60,8 @@ public class WsClient {
 //           {
 //               client.stop();
 //           }
-       }
-       catch (Throwable t)
+       } 
+	   catch (Throwable t)
        {
            t.printStackTrace(System.err);
        }
@@ -93,31 +90,30 @@ public class WsClient {
     	try {
 			session.getRemote().sendString(_command);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getLocalizedMessage());
 			e.printStackTrace();
 			answer=e.getLocalizedMessage();
 		}
     	return answer;
     }
 	
-	public static String getMessage(String _message)
-	{
-		String answer="";
-		try {
-		
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return answer;
-	}
+//	public static String getMessage(String _message)
+//	{
+//		String answer="";
+//		try {
+//		
+//			
+//		} catch (Exception e) {
+//			System.out.println(e.getLocalizedMessage());		}
+//		return answer;
+//	}
 	public void clientStop()
 	{
 		 try {
 			
 			client.stop();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getLocalizedMessage());
 			e.printStackTrace();
 		}
 	}
@@ -135,7 +131,7 @@ public class WsClient {
 		      System.out.println("Got IP: "+ip);
 		    } catch ( UnknownHostException e ) 
 		    {
-		      System.err.println("Could not find or reach IP address for: " + hostname);
+		      //System.err.println("Could not find or reach IP address for: " + hostname);
 		      throw new Exception("Could not find or reach  IP address for: " + hostname);
 		      
 		    }

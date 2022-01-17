@@ -20,8 +20,6 @@ public class TestMain {
 		String message = "";
 		String name = "java_Client1";
 
-//	WebsocketClient client = new WebsocketClient();
-//		WsClient client = WsClient.getModel();
 		WsClient client = WsClient.getModel(messageHandler);
 		vehicle = new Vehicle(client);
 		sonar = new Sonar(client);

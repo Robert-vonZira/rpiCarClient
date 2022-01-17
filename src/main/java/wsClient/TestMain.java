@@ -8,7 +8,7 @@ import hardware.Vehicle;
 
 	
 
-public class TestMain { 
+public class TestMain {
 	
 	private static Vehicle vehicle;
 	private static Sonar sonar;
